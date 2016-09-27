@@ -1,0 +1,4 @@
+jdbcUrl = jdbc:mysql://127.0.0.1/mahout_demo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = root
+password = root
+devMode = true

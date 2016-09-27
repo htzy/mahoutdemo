@@ -1,0 +1,13 @@
+Table: t_user
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         |         
+ username   | VARCHAR(20)  | YES  |     |         |         
+ password   | VARCHAR(32)  | YES  |     |         |         
+ gender     | VARCHAR(2)   | YES  |     |         |         
+ birthday   | DATETIME(19) | YES  |     |         |         
+ occupation | VARCHAR(20)  | YES  |     |         |         
+ zip_code   | VARCHAR(10)  | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
