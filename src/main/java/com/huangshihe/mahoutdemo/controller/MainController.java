@@ -15,9 +15,8 @@ import java.io.IOException;
  */
 public class MainController extends Controller {
 
-    // visitor can see the page, but visitor must login before operate
     public void index() {
-        // TODO main page, show website info
+        // visitor can see the page, but visitor must login before operate
         render("index.jsp");
     }
 
@@ -29,7 +28,7 @@ public class MainController extends Controller {
     public void checkLogin() {
         User loginUser = User.verify(getModel(User.class));
         if (loginUser == null) {
-            setSessionAttr("info", "yonghubucunzaihuomimacuowu!");
+            setSessionAttr("info", "wrong username or password!");
             redirect("/login");
         } else {
             removeSessionAttr("info");
@@ -43,4 +42,6 @@ public class MainController extends Controller {
         removeSessionAttr("userInfo");
         redirect("/login");
     }
+
+    // TODO show user info detail
 }

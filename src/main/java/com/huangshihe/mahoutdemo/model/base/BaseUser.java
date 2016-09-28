@@ -41,19 +41,19 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return get("gender");
 	}
 
-	public void setBirthday(java.util.Date birthday) {
-		set("birthday", birthday);
+	public void setAge(java.lang.Integer age) {
+		set("age", age);
 	}
 
-	public java.util.Date getBirthday() {
-		return get("birthday");
+	public java.lang.Integer getAge() {
+		return get("age");
 	}
 
-	public void setOccupation(java.lang.String occupation) {
+	public void setOccupation(java.lang.Integer occupation) {
 		set("occupation", occupation);
 	}
 
-	public java.lang.String getOccupation() {
+	public java.lang.Integer getOccupation() {
 		return get("occupation");
 	}
 

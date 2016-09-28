@@ -78,9 +78,9 @@
         <div class="item active">
           <div class="row">
             <div class="col-md-3">
-              <img src="${basePath}/lib/photos/user_placeholder.png" class="center-block img-circle img-responsive">
+              <img src="${basePath}/lib/photos/haokai.jpg" class="center-block img-circle img-responsive">
               <h3 class="text-center">郝凯</h3>
-              <p class="text-center">组长</p>
+              <p class="text-center">Project Manager</p>
             </div>
             <div class="col-md-3">
               <img src="${basePath}/lib/photos/huangshihe.jpg" class="center-block img-circle img-responsive">
@@ -88,38 +88,38 @@
               <p class="text-center">Lead Programmer</p>
             </div>
             <div class="col-md-3">
-              <img src="${basePath}/lib/photos/user_placeholder.png" class="center-block img-circle img-responsive">
-              <h3 class="text-center">John Doe</h3>
-              <p class="text-center">Programmer, Product Testing, Project Manager, UI Designer</p>
+              <img src="${basePath}/lib/photos/zhongliangjing.png" class="center-block img-circle img-responsive">
+              <h3 class="text-center">仲亮靓</h3>
+              <p class="text-center">Database Administrator</p>
             </div>
             <div class="col-md-3">
-              <img src="${basePath}/lib/photos/user_placeholder.png" class="center-block img-circle img-responsive">
-              <h3 class="text-center">John Doe</h3>
-              <p class="text-center">Programmer, Product Testing, Project Manager, UI Designer</p>
+              <img src="${basePath}/lib/photos/chenyuhong.jpg" class="center-block img-circle img-responsive">
+              <h3 class="text-center">陈玉红</h3>
+              <p class="text-center">Project Architect</p>
             </div>
           </div>
         </div>
         <div class="item">
           <div class="row">
             <div class="col-md-3">
-              <img src="${basePath}/lib/photos/user_placeholder.png" class="center-block img-circle img-responsive">
-              <h3 class="text-center">郝凯1</h3>
-              <p class="text-center">组长1</p>
+              <img src="${basePath}/lib/photos/yingyuting.jpg" class="center-block img-circle img-responsive">
+              <h3 class="text-center">应雨婷</h3>
+              <p class="text-center">UI Designer</p>
             </div>
             <div class="col-md-3">
-              <img src="${basePath}/lib/photos/huangshihe.jpg" class="center-block img-circle img-responsive">
-              <h3 class="text-center">黄诗鹤1</h3>
-              <p class="text-center">Lead Programmer</p>
+              <img src="${basePath}/lib/photos/qifan.jpg" class="center-block img-circle img-responsive">
+              <h3 class="text-center">齐凡</h3>
+              <p class="text-center">Product Testing</p>
             </div>
             <div class="col-md-3">
-              <img src="${basePath}/lib/photos/user_placeholder.png" class="center-block img-circle img-responsive">
-              <h3 class="text-center">John Doe1</h3>
-              <p class="text-center">Programmer, Product Testing, Project Manager, UI Designer</p>
+              <img src="${basePath}/lib/photos/hanxue.jpg" class="center-block img-circle img-responsive">
+              <h3 class="text-center">韩雪</h3>
+              <p class="text-center">Document Writer</p>
             </div>
             <div class="col-md-3">
-              <img src="${basePath}/lib/photos/user_placeholder.png" class="center-block img-circle img-responsive">
-              <h3 class="text-center">John Doe</h3>
-              <p class="text-center">Programmer, Product Testing, Project Manager, UI Designer</p>
+              <img src="${basePath}/lib/photos/huangjiayan.jpg" class="center-block img-circle img-responsive">
+              <h3 class="text-center">黄佳艳</h3>
+              <p class="text-center">Document Writer</p>
             </div>
           </div>
         </div>

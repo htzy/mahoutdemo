@@ -1,13 +1,23 @@
+Table: t_movie
+--------+-------------+------+-----+---------+---------
+ Field  | Type        | Null | Key | Default | Remarks 
+--------+-------------+------+-----+---------+---------
+ id     | INT(10)     | NO   | PRI |         |         
+ title  | TEXT(65535) | YES  |     |         |         
+ genres | VARCHAR(64) | YES  |     |         |         
+ url    | VARCHAR(64) | YES  |     |         |         
+--------+-------------+------+-----+---------+---------
+
 Table: t_user
-------------+--------------+------+-----+---------+---------
- Field      | Type         | Null | Key | Default | Remarks 
-------------+--------------+------+-----+---------+---------
- id         | INT(10)      | NO   | PRI |         |         
- username   | VARCHAR(20)  | YES  |     |         |         
- password   | VARCHAR(32)  | YES  |     |         |         
- gender     | VARCHAR(2)   | YES  |     |         |         
- birthday   | DATETIME(19) | YES  |     |         |         
- occupation | VARCHAR(20)  | YES  |     |         |         
- zip_code   | VARCHAR(10)  | YES  |     |         |         
-------------+--------------+------+-----+---------+---------
+------------+-------------+------+-----+---------+---------
+ Field      | Type        | Null | Key | Default | Remarks 
+------------+-------------+------+-----+---------+---------
+ id         | INT(10)     | NO   | PRI |         |         
+ username   | VARCHAR(32) | NO   |     |         |         
+ password   | VARCHAR(32) | NO   |     |         |         
+ gender     | VARCHAR(4)  | YES  |     |         |         
+ age        | INT(10)     | YES  |     |         |         
+ occupation | INT(10)     | YES  |     |         |         
+ zip_code   | VARCHAR(16) | YES  |     |         |         
+------------+-------------+------+-----+---------+---------
 

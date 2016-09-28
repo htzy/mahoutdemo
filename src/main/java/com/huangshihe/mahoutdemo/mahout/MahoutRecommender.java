@@ -61,9 +61,7 @@ public class MahoutRecommender {
                 System.out.print("recommendedItem.getItemID() = " + recommendedItem.getItemID());
                 System.out.println("recommendedItem.getValue() = " + recommendedItem.getValue());
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TasteException e) {
+        } catch (IOException | TasteException e) {
             e.printStackTrace();
         }
     }
@@ -87,15 +85,24 @@ public class MahoutRecommender {
         // 计算内容相似度
         ItemSimilarity similarity = new PearsonCorrelationSimilarity(model);
         // 构造推荐引擎
-        Recommender recommender = new GenericItemBasedRecommender(model, similarity);
+        Recommender recommender = new CachingRecommender(new GenericItemBasedRecommender(model, similarity));
         return recommender.recommend(userId, howMany);
     }
 
-    @Deprecated
+    /**
+     * neighborhoodCount: min = 2, max = 20
+     * howMany: 20
+     *
+     * @param userId loginUser.id
+     * @return
+     * @throws IOException
+     * @throws TasteException
+     */
     public List<RecommendedItem> getItemsBasedUser(int userId) throws IOException, TasteException {
-
-        return userBasedRecommender(userId, 2, 3);
+        int length = (int) ((Math.random() + 2) * 10);
+        return userBasedRecommender(userId, length, 18);
     }
+
     @Deprecated
     public List<RecommendedItem> getItemsBasedItem(int userId) throws IOException, TasteException {
         return itemBasedRecommender(userId, 100);
