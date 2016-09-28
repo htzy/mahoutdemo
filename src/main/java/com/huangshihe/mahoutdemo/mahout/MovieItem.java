@@ -20,11 +20,14 @@ public class MovieItem {
         title = movie.getTitle();
         geners = movie.getGenres();
         if (movie.getUrl() == null || "".equals(movie.getUrl().trim())) {
-            url = Constants.DEFAULT_MOVIE_BACKGROUND;
-        }else{
+            url = getRandomBackGround();
+        } else {
             url = movie.getUrl();
         }
+    }
 
+    public String getRandomBackGround() {
+        return Constants.DEFAULT_MOVIE_BACKGROUND + (int) (Math.random() * 20) + ".jpg";
     }
 
     public String getGeners() {
