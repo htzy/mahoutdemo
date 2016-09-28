@@ -1,6 +1,8 @@
 package com.huangshihe.mahoutdemo.config;
 
+import com.huangshihe.mahoutdemo.controller.MahoutController;
 import com.huangshihe.mahoutdemo.controller.MainController;
+import com.huangshihe.mahoutdemo.interceptor.UserLoginInterceptor;
 import com.huangshihe.mahoutdemo.model._MappingKit;
 import com.jfinal.config.*;
 import com.jfinal.ext.handler.ContextPathHandler;
@@ -28,6 +30,7 @@ public class BaseConfig extends JFinalConfig{
     @Override
     public void configRoute(Routes routes) {
         routes.add("/", MainController.class, "/WEB-INF/view/main/");
+        routes.add("/mahout", MahoutController.class, "/WEB-INF/view/mahout/");
     }
 
     @Override
@@ -43,12 +46,11 @@ public class BaseConfig extends JFinalConfig{
         // 所有配置在 MappingKit 中搞定
         _MappingKit.mapping(arp);
 
-//        plugins.add(new EhCachePlugin());
+        plugins.add(new EhCachePlugin());
     }
 
     @Override
     public void configInterceptor(Interceptors interceptors) {
-
     }
 
     @Override
