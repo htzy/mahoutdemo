@@ -55,8 +55,8 @@
                 <c:forEach items="${items}" var="item">
                     <div class="col-md-4">
                         <a><img src="${item.url}" class="img-responsive"></a>
-                        <h4>${item.title}</h4>
-                        <p>${item.id} geners:${item.geners} value:${item.value}</p>
+                        <h4>${item.title}</h4><small>${item.id} geners:${item.geners}</small>
+                        <h6>value:${item.value}</h6>
                     </div>
                 </c:forEach>
             </div>
