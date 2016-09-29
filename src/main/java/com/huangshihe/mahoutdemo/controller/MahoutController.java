@@ -21,7 +21,6 @@ public class MahoutController extends Controller {
     MahoutManage mahoutManage = new MahoutManage();
 
     public void index() {
-        // TODO which way is better?
         User user = getSessionAttr("userInfo");
         setAttr("items", mahoutManage.getMovieItems(user.getId()));
         render("index.jsp");

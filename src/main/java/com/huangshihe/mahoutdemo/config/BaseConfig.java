@@ -2,6 +2,7 @@ package com.huangshihe.mahoutdemo.config;
 
 import com.huangshihe.mahoutdemo.controller.MahoutController;
 import com.huangshihe.mahoutdemo.controller.MainController;
+import com.huangshihe.mahoutdemo.controller.ManageController;
 import com.huangshihe.mahoutdemo.interceptor.UserLoginInterceptor;
 import com.huangshihe.mahoutdemo.model._MappingKit;
 import com.jfinal.config.*;
@@ -31,6 +32,7 @@ public class BaseConfig extends JFinalConfig{
     public void configRoute(Routes routes) {
         routes.add("/", MainController.class, "/WEB-INF/view/main/");
         routes.add("/mahout", MahoutController.class, "/WEB-INF/view/mahout/");
+        routes.add("/manage", ManageController.class, "/WEB-INF/view/manage/");
     }
 
     @Override
