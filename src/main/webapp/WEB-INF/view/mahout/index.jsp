@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="${basePath}/lib/bootstrap-3.3.5/css/pingendo-default-bootstrap.css">
 </head>
 <body>
-<div class="cover">
     <div class="navbar">
         <div class="container">
             <div class="navbar-header">
@@ -42,26 +41,27 @@
             </div>
         </div>
     </div>
+<div class="section">
     <div class="container">
         <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12"><h1 class="text-center">专为你的推荐</h1></div>
-            </div>
-            <div>
-                <a href="javascript:void(0);" onclick="nextPage()">不满意？精彩总在下一页~</a><br>
-            </div>
-            <div id="moviesDiv">
-                <c:forEach items="${items}" var="item">
-                    <div class="col-md-4">
-                        <a><img src="${item.url}" class="img-responsive"></a>
-                        <h4>${item.title}</h4><small>${item.id} geners:${item.geners}</small>
-                        <h6>value:${item.value}</h6>
-                    </div>
-                </c:forEach>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12"><h1 class="text-center">专为你的推荐</h1></div>
+                </div>
+                <div>
+                    <a href="javascript:void(0);" onclick="nextPage()">不满意？精彩总在下一页~</a><br>
+                </div>
+                <div id="moviesDiv">
+                    <c:forEach items="${items}" var="item">
+                        <div class="col-md-4">
+                            <a><img src="${item.url}" class="img-responsive"></a>
+                            <h4 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" class="text-center">${item.title}</h4>
+                            <h6 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" class="text-center">value:${item.value}, geners:${item.geners}</h6>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </div>
 <footer class="section section-primary">
@@ -113,7 +113,9 @@
                     $moviesDiv.empty();
                     $.each(result.items, function (i) {
                         var item = result.items[i];
-                        $moviesDiv.append($('<div class="col-md-4"><a><img src='+item.url+' class="img-responsive"></a><h4>'+item.geners+'</h4></div>'));
+                        $moviesDiv.append($('<div class="col-md-4"><a><img src='+item.url+' class="img-responsive"></a>' +
+                        '<h4 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" class="text-center">'+item.title+'</h4>' +
+                        '<h6 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" class="text-center">value:'+item.value+', geners:'+item.geners+'</div>'));
                     });
                 }, "json");
     }
