@@ -36,6 +36,17 @@
            transactionalMode="off"
             />
 
+    <cache name="moviePages"
+           maxEntriesLocalHeap="10000"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           overflowToDisk="true"
+           diskSpoolBufferSizeMB="20"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off"
+            />
     <!--
     Sample cache named sampleCache2
     This cache has a maximum of 1000 elements in memory. There is no overflow to disk, so 1000

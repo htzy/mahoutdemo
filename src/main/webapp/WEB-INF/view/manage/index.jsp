@@ -25,7 +25,7 @@
 <body>
 <div class="lefter">
     <div class="logo">
-        <a href="#" target="_blank"><img src="${basePath}/lib/photos/logo.png" alt="后台管理系统"/></a>
+        <a href="#" target="_blank"><img src="http://oeerwig1e.bkt.clouddn.com/logo.png" alt="后台管理系统"/></a>
     </div>
 </div>
 <div class="righter nav-navicon" id="admin-nav">
@@ -39,8 +39,8 @@
                 <li class="active">
                     <a href="#" class="icon-home">开始</a>
                     <ul>
-                        <li class="active"><a href="#">系统</a></li>
-                        <li><a href="${basePath}/manage/background">电影管理</a></li>
+                        <li class="active"><a href="${basePath}/manage">系统</a></li>
+                        <li><a href="${basePath}/manage/movie">电影管理</a></li>
                         <li><a href="${basePath}/manage/evaluate">算法评估</a></li>
                     </ul>
                 </li>
@@ -61,7 +61,7 @@
         <div class="xm3">
             <div class="panel border-back">
                 <div class="panel-body text-center">
-                    <img src="${basePath}/lib/photos/face.png" width="120" class="radius-circle"/>
+                    <img src="http://oeerwig1e.bkt.clouddn.com/face.png" width="120" class="radius-circle"/>
                     <br/> admin
                 </div>
                 <div class="panel-foot bg-back border-back">您好，${userInfo.username}。</div>

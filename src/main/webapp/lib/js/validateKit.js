@@ -7,7 +7,7 @@
  * @param data 被测数据
  * @returns {boolean} null:false;not null:true;
  */
-function isNull(data){
+function isNull(data) {
     return !/[^(^\s*)|(\s*$)]/.test(data);
 }
 /**
@@ -15,7 +15,7 @@ function isNull(data){
  * @param data 被测数据
  * @returns {boolean}
  */
-function isNum(data){
+function isNum(data) {
     return /^\d+$/.test(data);
     //return checkData(data,/^/d+(/.{1}/d+\)?$/);
 }
@@ -25,7 +25,7 @@ function isNum(data){
  * @param data 被测数据
  * @returns {boolean}
  */
-function isEmail(data){
+function isEmail(data) {
     return isLegal(data) && /^[^@]+@[^@]+\.[^@]+$/.test(data);
 }
 
@@ -34,7 +34,7 @@ function isEmail(data){
  * @param data 被测数据
  * @returns {boolean}
  */
-function isLegal(data){
+function isLegal(data) {
     return /^[A-Za-z0-9_@.]+$/.test(data);
 }
 
@@ -43,21 +43,25 @@ function isLegal(data){
  * @param data 被测数据
  * @returns {boolean}
  */
-function isChinese(data){
+function isChinese(data) {
     return /^[\u0391-\uFFE5A-Za-z0-9.,_@]+$/.test(data);
 }
 
-
-
-
-
-
-
 /**
- * 数据检查
- * 出现的问题是reg参数传递出现问题，多一次函数调用效率会高？
+ * is url?
+ * @param data 被测数据
+ * @returns {boolean}
  */
-function checkData(data,reg){
-    return reg.test(data);
+function isUrl(data) {
+    return /^https:|http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/.test(data);
 }
+
+
+    /**
+     * 数据检查
+     * 出现的问题是reg参数传递出现问题，多一次函数调用效率会高？
+     */
+    function checkData(data, reg) {
+        return reg.test(data);
+    }
 
