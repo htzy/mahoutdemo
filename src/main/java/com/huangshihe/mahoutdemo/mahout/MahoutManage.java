@@ -1,8 +1,11 @@
 package com.huangshihe.mahoutdemo.mahout;
 
+import com.huangshihe.mahoutdemo.model.Movie;
+import com.huangshihe.mahoutdemo.util.Constants;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.eval.RecommenderBuilder;
 import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.common.FastIDSet;
 import org.apache.mahout.cf.taste.impl.eval.AverageAbsoluteDifferenceRecommenderEvaluator;
 import org.apache.mahout.cf.taste.impl.eval.RMSRecommenderEvaluator;
 import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
@@ -10,6 +13,7 @@ import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
+import org.apache.mahout.cf.taste.recommender.IDRescorer;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.recommender.Recommender;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
@@ -35,12 +39,37 @@ public class MahoutManage {
             e.printStackTrace();
         }
         if (recommendedItems != null) {
-            items.addAll(recommendedItems.stream().map(recommendedItem -> new MovieItem(recommendedItem.getItemID(), recommendedItem.getValue())).collect(Collectors.toList()));
+            items.addAll(recommendedItems.stream().map(
+                    recommendedItem -> new MovieItem(recommendedItem.getItemID(), recommendedItem.getValue()))
+                    .collect(Collectors.toList()));
         }
         return items;
     }
 
-    public void averageAbsoluteDifferenceRecommenderEvaluator() {
+    public List<MovieItem> getMovieItems(int userId, Movie searchMovie) {
+        MahoutRecommender recommender = new MahoutRecommender();
+        List<MovieItem> items = new ArrayList<MovieItem>();
+        List<RecommendedItem> recommendedItems = null;
+        FastIDSet fastIDSet = new FastIDSet();
+//        for (Movie movie : searchMovie.search()) {
+//            fastIDSet.add(movie.getId());
+//        }
+        searchMovie.search().stream().forEach(movie -> fastIDSet.add(movie.getId()));
+        IDRescorer rescorer = new MovieRescorer(fastIDSet);
+        try {
+            recommendedItems = recommender.itemBasedRecommender(userId, Constants.DEFAULT_ITEMS_LENGTH, rescorer);
+        } catch (IOException | TasteException e) {
+            e.printStackTrace();
+        }
+        if(recommendedItems != null){
+            items.addAll(recommendedItems.stream().map(
+                    recommendedItem -> new MovieItem(recommendedItem.getItemID(), recommendedItem.getValue()))
+                    .collect(Collectors.toList()));
+        }
+        return items;
+    }
+
+    public double averageAbsoluteDifferenceRecommenderEvaluator() {
         MahoutRecommender recommender = new MahoutRecommender();
 
         RandomUtils.useTestSeed();
@@ -69,10 +98,10 @@ public class MahoutManage {
         } catch (TasteException e) {
             e.printStackTrace();
         }
-        System.out.println(score);
+        return score;
     }
 
-    public void rMSRecommenderEvaluator() {
+    public double rMSRecommenderEvaluator() {
         MahoutRecommender recommender = new MahoutRecommender();
 
         RandomUtils.useTestSeed();
@@ -101,6 +130,6 @@ public class MahoutManage {
         } catch (TasteException e) {
             e.printStackTrace();
         }
-        System.out.println(score);
+        return score;
     }
 }

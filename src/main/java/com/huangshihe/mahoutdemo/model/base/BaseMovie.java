@@ -41,4 +41,12 @@ public abstract class BaseMovie<M extends BaseMovie<M>> extends Model<M> impleme
 		return get("url");
 	}
 
+	public void setYear(java.lang.Integer year) {
+		set("year", year);
+	}
+
+	public java.lang.Integer getYear() {
+		return get("year");
+	}
+
 }

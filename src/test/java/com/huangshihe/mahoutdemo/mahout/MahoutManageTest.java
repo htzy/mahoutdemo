@@ -8,10 +8,10 @@ import junit.framework.TestCase;
 public class MahoutManageTest extends TestCase {
 
     public void testTest1() throws Exception {
-        MahoutManage manage = new MahoutManage();
+//        MahoutManage manage = new MahoutManage();
         // 0.8839017169343092
-        manage.averageAbsoluteDifferenceRecommenderEvaluator();
+//        manage.averageAbsoluteDifferenceRecommenderEvaluator();
         // 1.1799277421455787
-        manage.rMSRecommenderEvaluator();
+//        manage.rMSRecommenderEvaluator();
     }
 }

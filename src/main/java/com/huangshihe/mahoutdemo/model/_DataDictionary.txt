@@ -6,6 +6,7 @@ Table: t_movie
  title  | TEXT(65535) | YES  |     |         |         
  genres | VARCHAR(64) | YES  |     |         |         
  url    | VARCHAR(64) | YES  |     |         |         
+ year   | INT(10)     | YES  |     | 1990    |         
 --------+-------------+------+-----+---------+---------
 
 Table: t_user

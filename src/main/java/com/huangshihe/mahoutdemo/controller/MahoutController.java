@@ -3,6 +3,7 @@ package com.huangshihe.mahoutdemo.controller;
 import com.huangshihe.mahoutdemo.interceptor.UserLoginInterceptor;
 import com.huangshihe.mahoutdemo.mahout.MahoutManage;
 import com.huangshihe.mahoutdemo.mahout.MahoutRecommender;
+import com.huangshihe.mahoutdemo.model.Movie;
 import com.huangshihe.mahoutdemo.model.User;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
@@ -29,5 +30,15 @@ public class MahoutController extends Controller {
     public void nextPage() {
         User user = getSessionAttr("userInfo");
         renderJson("items", mahoutManage.getMovieItems(user.getId()));
+    }
+
+    public void search(){
+        render("search.jsp");
+    }
+
+    public void toSearch(){
+        Movie movie = getModel(Movie.class);
+        User user = getSessionAttr("userInfo");
+        renderJson("items", mahoutManage.getMovieItems(user.getId(), movie));
     }
 }

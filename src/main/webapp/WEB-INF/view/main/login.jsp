@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>title name</title>
+  <title>小红花电影推荐系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="${basePath}/lib/js/jquery-1.12.2.js"></script>
@@ -30,14 +30,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><span>小红花</span></a>
+        <a class="navbar-brand" href="${basePath}/"><span>小红花</span></a>
       </div>
       <div class="collapse navbar-collapse" id="navbar-ex-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">visitor<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="${basePath}/login">login</a></li>
+              <c:if test="${userInfo.id==1}">
+                <li><a href="${basePath}/manage">manage</a></li>
+              </c:if>
+              <li><a href="${basePath}/logout">logout</a></li>
             </ul>
           </li>
         </ul>

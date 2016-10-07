@@ -14,4 +14,14 @@ public class Constants {
      * default page size
      */
     public static final int DEFAULT_PAGE_SIZE = 10;
+
+    /**
+     * default items length
+     */
+    public static final int DEFAULT_ITEMS_LENGTH = 18;
+
+    /**
+     * all year
+     */
+    public static final int ALL_YEAR = 0;
 }

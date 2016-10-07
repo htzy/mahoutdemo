@@ -1,10 +1,10 @@
-
 DROP TABLE IF EXISTS `t_movie`;
 CREATE TABLE `t_movie` (
   `id` int(4) PRIMARY KEY AUTO_INCREMENT,
   `title` text,
   `genres` varchar(64) default NULL,
-  `url` VARCHAR(64) DEFAULT NULL
+  `url` VARCHAR(64) DEFAULT NULL,
+  `year` INT(5) default 1990
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `t_user`;

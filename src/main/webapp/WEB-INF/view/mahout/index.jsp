@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>title name</title>
+    <title>小红花电影推荐系统</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="${basePath}/lib/js/jquery-1.12.2.js"></script>
@@ -27,13 +27,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>小红花</span></a>
+            <a class="navbar-brand" href="${basePath}/"><span>小红花</span></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">${userInfo.username}<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                        <c:if test="${userInfo.id==1}">
+                            <li><a href="${basePath}/manage">manage</a></li>
+                        </c:if>
                         <li><a href="${basePath}/logout">logout</a></li>
                     </ul>
                 </li>
@@ -48,8 +51,13 @@
                 <div class="row">
                     <div class="col-md-12"><h1 class="text-center">专为你的推荐</h1></div>
                 </div>
-                <div>
-                    <a href="javascript:void(0);" onclick="nextPage()">不满意？精彩总在下一页~</a><br>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <a href="javascript:void(0);" onclick="nextPage()">不满意？精彩总在下一页~</a>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="${basePath}/mahout/search">还不满意？搜索看看~</a>
+                    </div>
                 </div>
                 <div id="moviesDiv">
                     <c:forEach items="${items}" var="item">
