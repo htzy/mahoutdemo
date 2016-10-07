@@ -72,7 +72,7 @@
                         <option>Action</option>
                         <option>Adventure</option>
                         <option>Animation</option>
-                        <option>Children's</option>
+                        <option>Children</option>
                         <option>Comedy</option>
                         <option>Crime</option>
                         <option>Comedy</option>
