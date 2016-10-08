@@ -24,7 +24,7 @@
     disk cache, which in this configuration will go to wherever java.io.tmp is
     defined on your system. On a standard Linux system this will be /tmp"
     -->
-    <cache name="sampleCache1"
+    <cache name="movies"
            maxEntriesLocalHeap="10000"
            maxEntriesLocalDisk="1000"
            eternal="false"
@@ -35,7 +35,8 @@
            memoryStoreEvictionPolicy="LFU"
            transactionalMode="off"
             />
-    <cache name="userList"
+
+    <cache name="moviePages"
            maxEntriesLocalHeap="10000"
            maxEntriesLocalDisk="1000"
            eternal="false"
@@ -46,39 +47,6 @@
            memoryStoreEvictionPolicy="LFU"
            transactionalMode="off"
             />
-    <cache name="identityList"
-           maxEntriesLocalHeap="10000"
-           maxEntriesLocalDisk="1000"
-           eternal="false"
-           overflowToDisk="true"
-           diskSpoolBufferSizeMB="20"
-           timeToIdleSeconds="300"
-           timeToLiveSeconds="600"
-           memoryStoreEvictionPolicy="LFU"
-           transactionalMode="off"
-            />
-    <cache name="commentsList"
-           maxEntriesLocalHeap="10000"
-           maxEntriesLocalDisk="1000"
-           eternal="false"
-           overflowToDisk="true"
-           diskSpoolBufferSizeMB="20"
-           timeToIdleSeconds="300"
-           timeToLiveSeconds="600"
-           memoryStoreEvictionPolicy="LFU"
-           transactionalMode="off"
-            />
-    <cache name="blog"
-           maxEntriesLocalHeap="10000"
-           maxEntriesLocalDisk="1000"
-           eternal="false"
-           overflowToDisk="true"
-           diskSpoolBufferSizeMB="20"
-           timeToIdleSeconds="300"
-           timeToLiveSeconds="600"
-           memoryStoreEvictionPolicy="LFU"
-           transactionalMode="off"
-    />
     <!--
     Sample cache named sampleCache2
     This cache has a maximum of 1000 elements in memory. There is no overflow to disk, so 1000

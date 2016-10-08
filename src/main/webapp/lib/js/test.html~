@@ -1,0 +1,36 @@
+    <!DOCTYPE html>  
+    <html>  
+    <head lang="en">  
+        <meta charset="UTF-8">  
+        <title></title>  
+        <script src="jquery-1.12.2"></script>  
+        <style>  
+            *{padding: 0; margin: 0}  
+            .box{  
+                position: fixed;  
+                width: 100%;  
+                height: 100%;  
+                background: rgba(0,0,0,0.2);  
+                display: none;  
+            }  
+            .box1{  
+                width: 500px;  
+                height: 500px;  
+                position: fixed;left: 50%; top: 25%;  
+                margin-left: -250px;  
+                border: 1px solid #000000;  
+            }  
+        </style>  
+        <script>  
+       
+        </script>  
+    </head>  
+    <body>  
+        <div class="box">  
+            <div class="box1">  
+                <a href="javascript:;" onclick="jQuery('.box').hide()" class="close">关闭</a>  
+            </div>  
+        </div>  
+        <a href="javascript:;" onclick="jQuery('.box').show()" class="show">显示</a>  
+    </body>  
+    </html>  

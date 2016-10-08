@@ -18,4 +18,10 @@ public class User extends BaseUser<User> {
         return User.dao.findFirstByCache("userList", "user" + userId,
                 "select * from t_user where id=?", userId);
     }
+
+//    if("M".equals(movie.getGenres())){
+//        geners = "女";
+//    }else if("F".equals(movie.getGenres())){
+//        geners = "男";
+//    }
 }
